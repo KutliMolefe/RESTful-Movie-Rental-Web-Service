@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View All Movies</title>
+    <script>
+        function loadMovies() {
+            fetch('/viewall')
+                .then(response => response.json())
+                .then(data => {
+                    let moviesTable = document.getElementById("moviesTable");
+                    data.forEach(movie => {
+                        let row = moviesTable.insertRow();
+                        row.insertCell(0).innerHTML = movie.id;
+                        row.insertCell(1).innerHTML = movie.title;
+                        row.insertCell(2).innerHTML = movie.genre;
+                        row.insertCell(3).innerHTML = movie.director;
+                        row.insertCell(4).innerHTML = movie.year;
+                    });
+                });
+        }
+        window.onload = loadMovies;
+    </script>
+</head>
+<body>
+    <h1>All Movies</h1>
+    <table id="moviesTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Director</th>
+            <th>Year</th>
+        </tr>
+    </table>
+</body>
+</html>
+
+

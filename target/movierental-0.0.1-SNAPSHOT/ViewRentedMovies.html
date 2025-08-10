@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Rented Movies</title>
+</head>
+<body>
+    <h1>Rented Movies</h1>
+    <table id="rentedMoviesTable" border="1">
+        <tr>
+            <th>Movie ID</th>
+            <th>Title</th>
+            <th>User</th>
+        </tr>
+    </table>
+    <script>
+        function loadRentedMovies() {
+            fetch('/viewrented')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("rentedMoviesTable").innerHTML = data;
+                });
+        }
+        window.onload = loadRentedMovies;
+    </script>
+</body>
+</html>
+
+

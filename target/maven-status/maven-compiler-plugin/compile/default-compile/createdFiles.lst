@@ -1,0 +1,12 @@
+com\movierental\ViewAllServlet.class
+com\movierental\RegistrationResponse.class
+com\movierental\SearchMoviesServlet.class
+com\movierental\DatabaseConnection.class
+com\movierental\RentMoviesServlet.class
+com\movierental\LoginResponse.class
+com\movierental\MainServlet.class
+com\movierental\LoginServlet.class
+com\movierental\Movies.class
+com\movierental\RegistrationServlet.class
+com\movierental\User.class
+com\movierental\ViewRentedMoviesServlet.class

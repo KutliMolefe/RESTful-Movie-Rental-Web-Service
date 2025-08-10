@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Movie</title>
+    <style>
+        body {
+            background-color: #1b1b1b;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .movie-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .movie-details .movie-card {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        .movie-details .movie-card img {
+            border-radius: 10px;
+            height: 400px;
+            width: 300px;
+        }
+        .rent-button {
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 10px 20px;
+        }
+         .user-info {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rent Movie</h1>
+    <div class="user-info" id="userInfo">
+    Logged in as: <span id="username">Loading...</span>
+    </div>
+   
+     <div class="movie-details">
+        <div class="movie-card">
+            <img id="movieImage" src="" alt="">
+            <h2 id="movieTitle"></h2>
+            <h3>Rented successfully</h3>
+           <p>Rental Date: <span id="rentalDate"></span></p>
+<p>End Date: <span id="endDate"></span></p>
+           
+        </div>
+    </div>
+
+    <script>
+        // Function to set movie details from query parameters
+       function setMovieDetails() {
+    var params = new URLSearchParams(window.location.search);
+    var title = params.get('title');
+    var image = params.get('image');
+    var rentalDate = new Date(parseInt(params.get('rentalDate')));
+    var endDate = new Date(parseInt(params.get('endDate')));
+
+    document.getElementById('movieTitle').textContent = title;
+    document.getElementById('movieImage').src = "data:image/jpeg;base64," + image;
+    document.getElementById('rentalDate').textContent = formatDate(rentalDate);
+    document.getElementById('endDate').textContent = formatDate(endDate);
+}
+
+
+        // Fetch the username when the page loads
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetch('login', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const usernameElement = document.getElementById('username');
+                if (data.username) {
+                    usernameElement.innerText = data.username;
+                } else {
+                    usernameElement.innerText = 'Guest';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('username').innerText = 'Error loading username';
+            });
+        });
+    </script> 
+</body>
+</html>

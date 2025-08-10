@@ -1,0 +1,28 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>View Rented Movies</title>
+</head>
+<body>
+    <h1>Rented Movies</h1>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Rental Date</th>
+            <th>End Date</th>
+        </tr>
+        <c:forEach var="movie" items="${rentedMovies}">
+            <tr>
+                <td>${movie.title}</td>
+                <td>${movie.rentalDate}</td>
+                <td>${movie.endDate}</td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br>
+    <a href="main.html">Back to Main</a>
+</body>
+</html>
+
+
+

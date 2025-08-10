@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Rental Platform</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
+
+body,
+html {
+	background: rgb(255, 255, 255);
+	padding: 0;
+	margin: 0;
+	padding-bottom: 6rem;
+	font-family: "Montserrat", sans-serif;
+	width: 100%;
+}
+.h1{
+color: white;
+}
+ .container {
+ margin-top:100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          
+        }
+        .movie {
+        
+            width: 200px;
+           margin: 10px; 
+            text-align: center;
+           margin-bottom:160px;
+        }
+        .movie img {
+            width: 100%;
+            height:130%;
+            border-radius: 0px;
+        }
+        .movie-title {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .viewer-count {
+            color: gray;
+            font-size: 14px;
+        }
+.last {
+	margin-top: 6.5rem;
+}
+.featured_wrapper {
+	position: relative;
+}
+.featured_wrapper img {
+	width: 100%;
+	width: 100%;
+	height: 100vh;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: top;
+	object-position: top;
+}
+.title_wrapper {
+	position: absolute;
+	width: 100%;
+	left: 2rem;
+	bottom: 2rem;
+	padding: 20px 40px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.title_wrapper h1 {
+	width: 70%;
+}
+.title is-1 has-text-white{
+color:white;
+}
+
+button {
+	background: #f40612 !important;
+	color: #fff !important;
+	font-size: 18px;
+	padding: 0.5rem 3rem;
+	outline: none;
+	border: 0 !important;
+}
+@media (max-width: 768px) {
+	.title_wrapper {
+		text-align: center;
+		left: 0;
+	}
+	.title_wrapper h1 {
+		font-size: 32px !important;
+		width: 100%;
+		color:white;
+	}
+	.container {
+		padding: 20px;
+	}
+}
+@media (max-width: 480px) {
+	.column.is-one-quarter img {
+		width: 100%;
+		margin-bottom: 7rem;
+	}
+}
+ .user-info {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            color: black;
+            font-size: 16px;
+        }
+  .admin-actions {
+            display: none; /* Hide by default */
+        }
+        .view-all-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary color (blue) */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+</style>
+</head>
+<body>
+    <h1>Moonskai Films</h1>
+    <div class="user-info" id="userInfo">
+    Logged in as: <span id="username">Loading...</span>
+    </div>
+    <a href="viewall" class="view-all-link">View All Movies</a>
+    <a href="ViewRentedMoviesServlet" class="view-all-link">View Rented Movies</a>
+    
+    
+    <div class="top">
+	<div class="columns">
+		<div class="column is-full featured_wrapper p-0">
+			<img src="jokernew.jpg" class="featured">
+			<div class="title_wrapper">
+				<span class="has-text-white">Trending Today</span>
+				<h1 class="title is-1 has-text-white">The Joker</h1>
+				<button class="button is-medium">Watch It Now</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+        
+        <div class="movie">
+            <img src="Barbie-movie-040423-06-2000-f96cec32f2e64dbf9aca41cf67429778.jpg" alt="Movie 2">
+            <div class="movie-title">Movie 2</div>
+            <div class="viewer-count">140k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="RE_City_Hunter_n_00_02_58_03.jpg_RE_City_Hunter_n_00_02_58_03.12.jpg" alt="Movie 3">
+            <div class="movie-title">Movie 3</div>
+            <div class="viewer-count">136k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="ill_1729361_c0b3_201207071.0.988834193face_batman_ori.jpg" alt="Movie 4">
+            <div class="movie-title">Movie 4</div>
+            <div class="viewer-count">130k Viewers</div>
+        </div>
+         <div class="movie">
+            <img src="joker.jpg" alt="Movie 1">
+            <div class="movie-title">Movie 1</div>
+            <div class="viewer-count">238k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="Barbie-movie-040423-06-2000-f96cec32f2e64dbf9aca41cf67429778.jpg" alt="Movie 2">
+            <div class="movie-title">Movie 2</div>
+            <div class="viewer-count">140k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="RE_City_Hunter_n_00_02_58_03.jpg_RE_City_Hunter_n_00_02_58_03.12.jpg" alt="Movie 3">
+            <div class="movie-title">Movie 3</div>
+            <div class="viewer-count">136k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="ill_1729361_c0b3_201207071.0.988834193face_batman_ori.jpg" alt="Movie 4">
+            <div class="movie-title">Movie 4</div>
+            <div class="viewer-count">130k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="Barbie-movie-040423-06-2000-f96cec32f2e64dbf9aca41cf67429778.jpg" alt="Movie 2">
+            <div class="movie-title">Movie 2</div>
+            <div class="viewer-count">140k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="RE_City_Hunter_n_00_02_58_03.jpg_RE_City_Hunter_n_00_02_58_03.12.jpg" alt="Movie 3">
+            <div class="movie-title">Movie 3</div>
+            <div class="viewer-count">136k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="ill_1729361_c0b3_201207071.0.988834193face_batman_ori.jpg" alt="Movie 4">
+            <div class="movie-title">Movie 4</div>
+            <div class="viewer-count">130k Viewers</div>
+        </div>
+         <div class="movie">
+            <img src="joker.jpg" alt="Movie 1">
+            <div class="movie-title">Movie 1</div>
+            <div class="viewer-count">238k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="Barbie-movie-040423-06-2000-f96cec32f2e64dbf9aca41cf67429778.jpg" alt="Movie 2">
+            <div class="movie-title">Movie 2</div>
+            <div class="viewer-count">140k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="RE_City_Hunter_n_00_02_58_03.jpg_RE_City_Hunter_n_00_02_58_03.12.jpg" alt="Movie 3">
+            <div class="movie-title">Movie 3</div>
+            <div class="viewer-count">136k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="ill_1729361_c0b3_201207071.0.988834193face_batman_ori.jpg" alt="Movie 4">
+            <div class="movie-title">Movie 4</div>
+            <div class="viewer-count">130k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="joker.jpg" alt="Movie 1">
+            <div class="movie-title">Movie 1</div>
+            <div class="viewer-count">238k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="Barbie-movie-040423-06-2000-f96cec32f2e64dbf9aca41cf67429778.jpg" alt="Movie 2">
+            <div class="movie-title">Movie 2</div>
+            <div class="viewer-count">140k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="RE_City_Hunter_n_00_02_58_03.jpg_RE_City_Hunter_n_00_02_58_03.12.jpg" alt="Movie 3">
+            <div class="movie-title">Movie 3</div>
+            <div class="viewer-count">136k Viewers</div>
+        </div>
+        <div class="movie">
+            <img src="ill_1729361_c0b3_201207071.0.988834193face_batman_ori.jpg" alt="Movie 4">
+            <div class="movie-title">Movie 4</div>
+            <div class="viewer-count">130k Viewers</div>
+        </div>
+        <!-- Add more movies as needed -->
+    </div>
+    
+        <!-- Add more movies as needed -->
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        fetch('login', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const usernameElement = document.getElementById('username');
+            if (data.username) {
+                usernameElement.innerText = data.username;
+
+                // Check if the user is an admin and display admin actions
+                if (data.role === 'admin') {
+                    document.querySelectorAll('.admin-actions').forEach(elem => {
+                        elem.style.display = 'block';
+                    });
+                }
+            } else {
+                usernameElement.innerText = 'Guest';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('username').innerText = 'Error loading username';
+        });
+  
+ // Conditionally show admin button based on server-provided role
+    if (typeof userRole !== 'undefined' && userRole === 'admin') {
+        document.querySelector('.admin-actions').style.display = 'block';
+    }
+});
+    </script>
+</body>
+</html>
+
